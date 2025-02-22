@@ -1,0 +1,4 @@
+traffic_data_sample.geojson
+traffic_data_sample.csv
+traffic_data_sample.parquet
+traffic_data_sample/

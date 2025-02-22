@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ca9a5b9662b1822200996e818b2570f1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ca9a5b9662b1822200996e818b2570f1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ca9a5b9662b1822200996e818b2570f1 = L.map(
+                "map_ca9a5b9662b1822200996e818b2570f1",
+                {
+                    center: [40.7220396, -73.99926791476827],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7770f31e056214523508ed9c9ed914ed = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7770f31e056214523508ed9c9ed914ed.addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var marker_77ea71575b3921b9d238328843a186c6 = L.marker(
+                [40.7220396, -73.99926791476827],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_8362c1e58f5c8bb83fbf2a748151efc3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_77ea71575b3921b9d238328843a186c6.setIcon(icon_8362c1e58f5c8bb83fbf2a748151efc3);
+        
+    
+        var popup_e7160460516a6cd77bba15722e97ea9f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b4fe244b41d4a6c5fdccddb1ef9d372 = $(`<div id="html_3b4fe244b41d4a6c5fdccddb1ef9d372" style="width: 100.0%; height: 100.0%;">Store Location</div>`)[0];
+                popup_e7160460516a6cd77bba15722e97ea9f.setContent(html_3b4fe244b41d4a6c5fdccddb1ef9d372);
+            
+        
+
+        marker_77ea71575b3921b9d238328843a186c6.bindPopup(popup_e7160460516a6cd77bba15722e97ea9f)
+        ;
+
+        
+    
+    
+            var poly_line_7e5abc95d5aac3df6df03c9b88223db6 = L.polyline(
+                [[40.7214207649231, -73.9990305900574], [40.72145366668699, -73.9991049766541], [40.721737146377606, -73.9997472763062], [40.7217442989349, -73.99976348876949], [40.721746683120706, -73.99976873397829], [40.72178888320921, -73.9998550415039]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_85f6b4fd4d80319449beff18d4ac4f1a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ecabe8c35aa60920fcd16f9f2810b348 = $(`<div id="html_ecabe8c35aa60920fcd16f9f2810b348" style="width: 100.0%; height: 100.0%;">Broome Street / 46348767 / 2</div>`)[0];
+                popup_85f6b4fd4d80319449beff18d4ac4f1a.setContent(html_ecabe8c35aa60920fcd16f9f2810b348);
+            
+        
+
+        poly_line_7e5abc95d5aac3df6df03c9b88223db6.bindPopup(popup_85f6b4fd4d80319449beff18d4ac4f1a)
+        ;
+
+        
+    
+    
+            var marker_0301ce4129fbe59bb200ebe94e5a2271 = L.marker(
+                [40.7214207649231, -73.9990305900574],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_822239b0a003c7d9e13af2d1c556b984 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0301ce4129fbe59bb200ebe94e5a2271.setIcon(icon_822239b0a003c7d9e13af2d1c556b984);
+        
+    
+        var popup_9559287519c8df51d6f31701074130fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e7ef63a5ae160df0d940291534b2f8eb = $(`<div id="html_e7ef63a5ae160df0d940291534b2f8eb" style="width: 100.0%; height: 100.0%;">Start of segment 2176239</div>`)[0];
+                popup_9559287519c8df51d6f31701074130fb.setContent(html_e7ef63a5ae160df0d940291534b2f8eb);
+            
+        
+
+        marker_0301ce4129fbe59bb200ebe94e5a2271.bindPopup(popup_9559287519c8df51d6f31701074130fb)
+        ;
+
+        
+    
+    
+            var marker_750652f185c4e98dba97e9c011655364 = L.marker(
+                [40.72178888320921, -73.9998550415039],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_92c82a1b791946c799d916dc67e4e01b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_750652f185c4e98dba97e9c011655364.setIcon(icon_92c82a1b791946c799d916dc67e4e01b);
+        
+    
+        var popup_bc6ad7ec57cef682580afcbace40aab9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b4ec8d2d3512b1f4f6fe88524bd3ae85 = $(`<div id="html_b4ec8d2d3512b1f4f6fe88524bd3ae85" style="width: 100.0%; height: 100.0%;">End of segment 2176239</div>`)[0];
+                popup_bc6ad7ec57cef682580afcbace40aab9.setContent(html_b4ec8d2d3512b1f4f6fe88524bd3ae85);
+            
+        
+
+        marker_750652f185c4e98dba97e9c011655364.bindPopup(popup_bc6ad7ec57cef682580afcbace40aab9)
+        ;
+
+        
+    
+    
+            var poly_line_425da8d252de606a965132e4cdb2753a = L.polyline(
+                [[40.7214207649231, -73.9990305900574], [40.72145366668699, -73.9991049766541], [40.721737146377606, -73.9997472763062], [40.7217442989349, -73.99976348876949], [40.721746683120706, -73.99976873397829], [40.72178888320921, -73.9998550415039]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_6623c92187e1d614d22c5f2eefcbc4d7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b680c8e3f7382a874f3f18e388f3907 = $(`<div id="html_8b680c8e3f7382a874f3f18e388f3907" style="width: 100.0%; height: 100.0%;">Broome Street / 46348767 / 2</div>`)[0];
+                popup_6623c92187e1d614d22c5f2eefcbc4d7.setContent(html_8b680c8e3f7382a874f3f18e388f3907);
+            
+        
+
+        poly_line_425da8d252de606a965132e4cdb2753a.bindPopup(popup_6623c92187e1d614d22c5f2eefcbc4d7)
+        ;
+
+        
+    
+    
+            var marker_d8475ac1871d257f2382962c7248e512 = L.marker(
+                [40.7214207649231, -73.9990305900574],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_8396ea7fb82a137f054d61b50d096fe2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d8475ac1871d257f2382962c7248e512.setIcon(icon_8396ea7fb82a137f054d61b50d096fe2);
+        
+    
+        var popup_a68b047d2e3732a7a44e8c0ec6e49e79 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_40628747d8247c5fd7ec43beac6704e9 = $(`<div id="html_40628747d8247c5fd7ec43beac6704e9" style="width: 100.0%; height: 100.0%;">Start of segment 2176240</div>`)[0];
+                popup_a68b047d2e3732a7a44e8c0ec6e49e79.setContent(html_40628747d8247c5fd7ec43beac6704e9);
+            
+        
+
+        marker_d8475ac1871d257f2382962c7248e512.bindPopup(popup_a68b047d2e3732a7a44e8c0ec6e49e79)
+        ;
+
+        
+    
+    
+            var marker_51fe498f449fefb55d78d0ea5d457ae8 = L.marker(
+                [40.72178888320921, -73.9998550415039],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_f1e271930abfcdd8eff07478d598a1a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_51fe498f449fefb55d78d0ea5d457ae8.setIcon(icon_f1e271930abfcdd8eff07478d598a1a4);
+        
+    
+        var popup_6f54ecefca53159b4c11df80d1d05d01 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a04adcf34afd4ef10da57a205cbd3ff = $(`<div id="html_7a04adcf34afd4ef10da57a205cbd3ff" style="width: 100.0%; height: 100.0%;">End of segment 2176240</div>`)[0];
+                popup_6f54ecefca53159b4c11df80d1d05d01.setContent(html_7a04adcf34afd4ef10da57a205cbd3ff);
+            
+        
+
+        marker_51fe498f449fefb55d78d0ea5d457ae8.bindPopup(popup_6f54ecefca53159b4c11df80d1d05d01)
+        ;
+
+        
+    
+    
+            var poly_line_8020ad94a12a56fde496851a53ff46f3 = L.polyline(
+                [[40.7208359241486, -73.99765491485599], [40.7208697795868, -73.9977335929871], [40.721021652221694, -73.99809741973878], [40.72106289863589, -73.9981956481934]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_473c6aa8763d7cc44d07246a937e49ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_33fe67716e4df86ad7866d5fe50ad4a9 = $(`<div id="html_33fe67716e4df86ad7866d5fe50ad4a9" style="width: 100.0%; height: 100.0%;">Broome Street / 68668516 / 1</div>`)[0];
+                popup_473c6aa8763d7cc44d07246a937e49ab.setContent(html_33fe67716e4df86ad7866d5fe50ad4a9);
+            
+        
+
+        poly_line_8020ad94a12a56fde496851a53ff46f3.bindPopup(popup_473c6aa8763d7cc44d07246a937e49ab)
+        ;
+
+        
+    
+    
+            var marker_c1fe2b2021f4a477686a4eb800ee1064 = L.marker(
+                [40.7208359241486, -73.99765491485599],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_2c3c05737f5c9118ea49a9b1a82ad977 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c1fe2b2021f4a477686a4eb800ee1064.setIcon(icon_2c3c05737f5c9118ea49a9b1a82ad977);
+        
+    
+        var popup_910e08705483df2e35c9c46e333a2537 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a1561bde2da03b6f1e3f4b42161fc642 = $(`<div id="html_a1561bde2da03b6f1e3f4b42161fc642" style="width: 100.0%; height: 100.0%;">Start of segment 2176963</div>`)[0];
+                popup_910e08705483df2e35c9c46e333a2537.setContent(html_a1561bde2da03b6f1e3f4b42161fc642);
+            
+        
+
+        marker_c1fe2b2021f4a477686a4eb800ee1064.bindPopup(popup_910e08705483df2e35c9c46e333a2537)
+        ;
+
+        
+    
+    
+            var marker_4298904742e990f845964a05f5d66128 = L.marker(
+                [40.72106289863589, -73.9981956481934],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_565f8c2f90d16119b4a6919f92966bda = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4298904742e990f845964a05f5d66128.setIcon(icon_565f8c2f90d16119b4a6919f92966bda);
+        
+    
+        var popup_f40d842cc31f682f7c0e8194c161cff6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6cda321a3092195466de54c9d35f4540 = $(`<div id="html_6cda321a3092195466de54c9d35f4540" style="width: 100.0%; height: 100.0%;">End of segment 2176963</div>`)[0];
+                popup_f40d842cc31f682f7c0e8194c161cff6.setContent(html_6cda321a3092195466de54c9d35f4540);
+            
+        
+
+        marker_4298904742e990f845964a05f5d66128.bindPopup(popup_f40d842cc31f682f7c0e8194c161cff6)
+        ;
+
+        
+    
+    
+            var poly_line_b8812467f7727c46a58502a75a5867a4 = L.polyline(
+                [[40.7208359241486, -73.99765491485599], [40.7208697795868, -73.9977335929871], [40.721021652221694, -73.99809741973878], [40.72106289863589, -73.9981956481934]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_b36da2c70d0ff8aa55960420fef4597a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cddfc48f2414e83879efb18e4d610df7 = $(`<div id="html_cddfc48f2414e83879efb18e4d610df7" style="width: 100.0%; height: 100.0%;">Broome Street / 68668516 / 1</div>`)[0];
+                popup_b36da2c70d0ff8aa55960420fef4597a.setContent(html_cddfc48f2414e83879efb18e4d610df7);
+            
+        
+
+        poly_line_b8812467f7727c46a58502a75a5867a4.bindPopup(popup_b36da2c70d0ff8aa55960420fef4597a)
+        ;
+
+        
+    
+    
+            var marker_0bde942bb7b012ded68cd6bf72bf786a = L.marker(
+                [40.7208359241486, -73.99765491485599],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_07b3ad3d20a833d5afb713330846ea3e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0bde942bb7b012ded68cd6bf72bf786a.setIcon(icon_07b3ad3d20a833d5afb713330846ea3e);
+        
+    
+        var popup_39822d048d793ba0554aceefbfec3405 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_854030c5f219b7850662cb669a7f0e37 = $(`<div id="html_854030c5f219b7850662cb669a7f0e37" style="width: 100.0%; height: 100.0%;">Start of segment 2176964</div>`)[0];
+                popup_39822d048d793ba0554aceefbfec3405.setContent(html_854030c5f219b7850662cb669a7f0e37);
+            
+        
+
+        marker_0bde942bb7b012ded68cd6bf72bf786a.bindPopup(popup_39822d048d793ba0554aceefbfec3405)
+        ;
+
+        
+    
+    
+            var marker_3d6ce7f06b015c2ea8f7479166ebd7fb = L.marker(
+                [40.72106289863589, -73.9981956481934],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_bf668f46c1b13b58122544ea7bb166b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3d6ce7f06b015c2ea8f7479166ebd7fb.setIcon(icon_bf668f46c1b13b58122544ea7bb166b8);
+        
+    
+        var popup_632ce79180be2937918789c90c0ce2b7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_af07a39e7e7e1a1f06e8cb08886a667b = $(`<div id="html_af07a39e7e7e1a1f06e8cb08886a667b" style="width: 100.0%; height: 100.0%;">End of segment 2176964</div>`)[0];
+                popup_632ce79180be2937918789c90c0ce2b7.setContent(html_af07a39e7e7e1a1f06e8cb08886a667b);
+            
+        
+
+        marker_3d6ce7f06b015c2ea8f7479166ebd7fb.bindPopup(popup_632ce79180be2937918789c90c0ce2b7)
+        ;
+
+        
+    
+    
+            var poly_line_ca90d99918fd0bea4b81f96129f5295d = L.polyline(
+                [[40.7242348194122, -73.997784614563], [40.724200725555406, -73.99781370162958], [40.72397279739379, -73.99800634384158], [40.7230677604675, -73.9987721443176], [40.7230207920074, -73.99881172180179]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_0814cb56ab5e4098b41723c4aae117bc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c9a18cde91ad6522e876c8ce5f68c0ef = $(`<div id="html_c9a18cde91ad6522e876c8ce5f68c0ef" style="width: 100.0%; height: 100.0%;">Broadway / 968737540 / 1</div>`)[0];
+                popup_0814cb56ab5e4098b41723c4aae117bc.setContent(html_c9a18cde91ad6522e876c8ce5f68c0ef);
+            
+        
+
+        poly_line_ca90d99918fd0bea4b81f96129f5295d.bindPopup(popup_0814cb56ab5e4098b41723c4aae117bc)
+        ;
+
+        
+    
+    
+            var marker_ac195419f64332df7af8bd6a009789a8 = L.marker(
+                [40.7242348194122, -73.997784614563],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_804bfd668f673202ace83872cf3f95ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ac195419f64332df7af8bd6a009789a8.setIcon(icon_804bfd668f673202ace83872cf3f95ac);
+        
+    
+        var popup_4cd3d4a51baff10adba2189b26f2a550 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c98c3552bb343fddee46d44a08acc41f = $(`<div id="html_c98c3552bb343fddee46d44a08acc41f" style="width: 100.0%; height: 100.0%;">Start of segment 2178728</div>`)[0];
+                popup_4cd3d4a51baff10adba2189b26f2a550.setContent(html_c98c3552bb343fddee46d44a08acc41f);
+            
+        
+
+        marker_ac195419f64332df7af8bd6a009789a8.bindPopup(popup_4cd3d4a51baff10adba2189b26f2a550)
+        ;
+
+        
+    
+    
+            var marker_42e44979ae0d618adfc79310fb6a8129 = L.marker(
+                [40.7230207920074, -73.99881172180179],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_a17a9dbddefda8d5d22ec76d15ae7b2a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_42e44979ae0d618adfc79310fb6a8129.setIcon(icon_a17a9dbddefda8d5d22ec76d15ae7b2a);
+        
+    
+        var popup_8385e9bdf84c9c0d71f2f1797c285dda = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4fe32d05ae219f9d05328f46676e6d84 = $(`<div id="html_4fe32d05ae219f9d05328f46676e6d84" style="width: 100.0%; height: 100.0%;">End of segment 2178728</div>`)[0];
+                popup_8385e9bdf84c9c0d71f2f1797c285dda.setContent(html_4fe32d05ae219f9d05328f46676e6d84);
+            
+        
+
+        marker_42e44979ae0d618adfc79310fb6a8129.bindPopup(popup_8385e9bdf84c9c0d71f2f1797c285dda)
+        ;
+
+        
+    
+    
+            var poly_line_0af746a7da90c4835abdc84c2723418c = L.polyline(
+                [[40.7242348194122, -73.997784614563], [40.724200725555406, -73.99781370162958], [40.72397279739379, -73.99800634384158], [40.7230677604675, -73.9987721443176], [40.7230207920074, -73.99881172180179]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_e7c2e5b27096557562199fcf3adc6405 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4fc317caa6e986b727044d4370e399e = $(`<div id="html_c4fc317caa6e986b727044d4370e399e" style="width: 100.0%; height: 100.0%;">Broadway / 968737540 / 1</div>`)[0];
+                popup_e7c2e5b27096557562199fcf3adc6405.setContent(html_c4fc317caa6e986b727044d4370e399e);
+            
+        
+
+        poly_line_0af746a7da90c4835abdc84c2723418c.bindPopup(popup_e7c2e5b27096557562199fcf3adc6405)
+        ;
+
+        
+    
+    
+            var marker_e3e29693e2b1533cba3c1bb1c602ff17 = L.marker(
+                [40.7242348194122, -73.997784614563],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_4090bf55fcd26b9922d24c265052f40e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e3e29693e2b1533cba3c1bb1c602ff17.setIcon(icon_4090bf55fcd26b9922d24c265052f40e);
+        
+    
+        var popup_dfb4e7b8c14d9a48508ab5e2e320e551 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_788ee640f277131a2834221dc02e98de = $(`<div id="html_788ee640f277131a2834221dc02e98de" style="width: 100.0%; height: 100.0%;">Start of segment 2178731</div>`)[0];
+                popup_dfb4e7b8c14d9a48508ab5e2e320e551.setContent(html_788ee640f277131a2834221dc02e98de);
+            
+        
+
+        marker_e3e29693e2b1533cba3c1bb1c602ff17.bindPopup(popup_dfb4e7b8c14d9a48508ab5e2e320e551)
+        ;
+
+        
+    
+    
+            var marker_7e4e226251afbfc70cf2514c1f1941ec = L.marker(
+                [40.7230207920074, -73.99881172180179],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_278eb35c4383d181d6a51a006172e9ff = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7e4e226251afbfc70cf2514c1f1941ec.setIcon(icon_278eb35c4383d181d6a51a006172e9ff);
+        
+    
+        var popup_1165dfa23e55b918d87c9c94a0df2c8f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b0b8b081ad4da28880a45cd0f5ee511c = $(`<div id="html_b0b8b081ad4da28880a45cd0f5ee511c" style="width: 100.0%; height: 100.0%;">End of segment 2178731</div>`)[0];
+                popup_1165dfa23e55b918d87c9c94a0df2c8f.setContent(html_b0b8b081ad4da28880a45cd0f5ee511c);
+            
+        
+
+        marker_7e4e226251afbfc70cf2514c1f1941ec.bindPopup(popup_1165dfa23e55b918d87c9c94a0df2c8f)
+        ;
+
+        
+    
+    
+            var poly_line_1eb65579de7dfe0c37da7afe9363f02c = L.polyline(
+                [[40.721581459045396, -73.9977850914001], [40.7215158939362, -73.9978370666504], [40.7211375236511, -73.9981365203857], [40.72106289863589, -73.9981956481934]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_1b6c4d82bb1beaa2e78dce3141fac11f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_917ade469e26dce550ce7f00e927cb44 = $(`<div id="html_917ade469e26dce550ce7f00e927cb44" style="width: 100.0%; height: 100.0%;">Lafayette Street / 1051858090 / 1</div>`)[0];
+                popup_1b6c4d82bb1beaa2e78dce3141fac11f.setContent(html_917ade469e26dce550ce7f00e927cb44);
+            
+        
+
+        poly_line_1eb65579de7dfe0c37da7afe9363f02c.bindPopup(popup_1b6c4d82bb1beaa2e78dce3141fac11f)
+        ;
+
+        
+    
+    
+            var marker_8887cdbcafcf25e8f7d0d24239a5e7a0 = L.marker(
+                [40.721581459045396, -73.9977850914001],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_342cf6c932435129db61732c4f774655 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8887cdbcafcf25e8f7d0d24239a5e7a0.setIcon(icon_342cf6c932435129db61732c4f774655);
+        
+    
+        var popup_5350e4eb1b387b0476914594c5a2cf31 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9739cffaca2daf45b25ff001932730f4 = $(`<div id="html_9739cffaca2daf45b25ff001932730f4" style="width: 100.0%; height: 100.0%;">Start of segment 2179075</div>`)[0];
+                popup_5350e4eb1b387b0476914594c5a2cf31.setContent(html_9739cffaca2daf45b25ff001932730f4);
+            
+        
+
+        marker_8887cdbcafcf25e8f7d0d24239a5e7a0.bindPopup(popup_5350e4eb1b387b0476914594c5a2cf31)
+        ;
+
+        
+    
+    
+            var marker_62fb5e642365bb268ebd45195d4a28ef = L.marker(
+                [40.72106289863589, -73.9981956481934],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_018d3b9f723dc07bc2743ca4bc3b08f5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_62fb5e642365bb268ebd45195d4a28ef.setIcon(icon_018d3b9f723dc07bc2743ca4bc3b08f5);
+        
+    
+        var popup_b70db10e8ccbbf76351dfc72d0428dd3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d2a79ecc40638b26ff87aba2e2adb704 = $(`<div id="html_d2a79ecc40638b26ff87aba2e2adb704" style="width: 100.0%; height: 100.0%;">End of segment 2179075</div>`)[0];
+                popup_b70db10e8ccbbf76351dfc72d0428dd3.setContent(html_d2a79ecc40638b26ff87aba2e2adb704);
+            
+        
+
+        marker_62fb5e642365bb268ebd45195d4a28ef.bindPopup(popup_b70db10e8ccbbf76351dfc72d0428dd3)
+        ;
+
+        
+    
+    
+            var poly_line_00bfa02c85524b05073c0ca75262e361 = L.polyline(
+                [[40.721581459045396, -73.9977850914001], [40.7215158939362, -73.9978370666504], [40.7211375236511, -73.9981365203857], [40.72106289863589, -73.9981956481934]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_038f2fc54a281488ca46a77fa43c5d35 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61025dec09f019c7f0d518495e4c9fc1 = $(`<div id="html_61025dec09f019c7f0d518495e4c9fc1" style="width: 100.0%; height: 100.0%;">Lafayette Street / 1051858090 / 1</div>`)[0];
+                popup_038f2fc54a281488ca46a77fa43c5d35.setContent(html_61025dec09f019c7f0d518495e4c9fc1);
+            
+        
+
+        poly_line_00bfa02c85524b05073c0ca75262e361.bindPopup(popup_038f2fc54a281488ca46a77fa43c5d35)
+        ;
+
+        
+    
+    
+            var marker_d7b83f9c5aee5990eca1ced087d58f06 = L.marker(
+                [40.721581459045396, -73.9977850914001],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_6f5f16286d9e9b0186574cd4d83ba512 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d7b83f9c5aee5990eca1ced087d58f06.setIcon(icon_6f5f16286d9e9b0186574cd4d83ba512);
+        
+    
+        var popup_0adfda573d7b31920dfc0875cacf6720 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60d60bf366907337b75e8e1fabf93cb0 = $(`<div id="html_60d60bf366907337b75e8e1fabf93cb0" style="width: 100.0%; height: 100.0%;">Start of segment 2179080</div>`)[0];
+                popup_0adfda573d7b31920dfc0875cacf6720.setContent(html_60d60bf366907337b75e8e1fabf93cb0);
+            
+        
+
+        marker_d7b83f9c5aee5990eca1ced087d58f06.bindPopup(popup_0adfda573d7b31920dfc0875cacf6720)
+        ;
+
+        
+    
+    
+            var marker_fd96866573ceedc34546ed308e870196 = L.marker(
+                [40.72106289863589, -73.9981956481934],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_41c20d37d4d7b8481ce8775b51e256d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_fd96866573ceedc34546ed308e870196.setIcon(icon_41c20d37d4d7b8481ce8775b51e256d5);
+        
+    
+        var popup_df3130309be0937059b738fa7194bbc2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_625706aa327fbf6bff1fd341e396497e = $(`<div id="html_625706aa327fbf6bff1fd341e396497e" style="width: 100.0%; height: 100.0%;">End of segment 2179080</div>`)[0];
+                popup_df3130309be0937059b738fa7194bbc2.setContent(html_625706aa327fbf6bff1fd341e396497e);
+            
+        
+
+        marker_fd96866573ceedc34546ed308e870196.bindPopup(popup_df3130309be0937059b738fa7194bbc2)
+        ;
+
+        
+    
+    
+            var poly_line_dd344a3233dacf2714b9b3b0e1ae4de8 = L.polyline(
+                [[40.72106289863589, -73.9981956481934], [40.720996379852295, -73.99825143814088], [40.72010874748229, -73.99899291992189], [40.7200527191162, -73.999041557312]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_0e7801c69e2dbc2f12966221425b0636 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b58e5f84cf6fb2ca037a6bfc0f5f9f4a = $(`<div id="html_b58e5f84cf6fb2ca037a6bfc0f5f9f4a" style="width: 100.0%; height: 100.0%;">Lafayette Street / 944692441 / 1</div>`)[0];
+                popup_0e7801c69e2dbc2f12966221425b0636.setContent(html_b58e5f84cf6fb2ca037a6bfc0f5f9f4a);
+            
+        
+
+        poly_line_dd344a3233dacf2714b9b3b0e1ae4de8.bindPopup(popup_0e7801c69e2dbc2f12966221425b0636)
+        ;
+
+        
+    
+    
+            var marker_01a1c0587c49ae0e78ee3670412d2f45 = L.marker(
+                [40.72106289863589, -73.9981956481934],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_bb5547bd5eb3f4161f224c33890c97ae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_01a1c0587c49ae0e78ee3670412d2f45.setIcon(icon_bb5547bd5eb3f4161f224c33890c97ae);
+        
+    
+        var popup_22967cacb9f9565ea967e1d1cc983cf2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f1120fa43883549334f03c5a8708d3e6 = $(`<div id="html_f1120fa43883549334f03c5a8708d3e6" style="width: 100.0%; height: 100.0%;">Start of segment 2179858</div>`)[0];
+                popup_22967cacb9f9565ea967e1d1cc983cf2.setContent(html_f1120fa43883549334f03c5a8708d3e6);
+            
+        
+
+        marker_01a1c0587c49ae0e78ee3670412d2f45.bindPopup(popup_22967cacb9f9565ea967e1d1cc983cf2)
+        ;
+
+        
+    
+    
+            var marker_1df6639778c24da21b4a7403b9384307 = L.marker(
+                [40.7200527191162, -73.999041557312],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_7ce0606967232ba594d4ab38901e74c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1df6639778c24da21b4a7403b9384307.setIcon(icon_7ce0606967232ba594d4ab38901e74c0);
+        
+    
+        var popup_cc1219a4e79201d4edf202b5f518c908 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a1cde0b32740c823e09bc6847c534cf = $(`<div id="html_1a1cde0b32740c823e09bc6847c534cf" style="width: 100.0%; height: 100.0%;">End of segment 2179858</div>`)[0];
+                popup_cc1219a4e79201d4edf202b5f518c908.setContent(html_1a1cde0b32740c823e09bc6847c534cf);
+            
+        
+
+        marker_1df6639778c24da21b4a7403b9384307.bindPopup(popup_cc1219a4e79201d4edf202b5f518c908)
+        ;
+
+        
+    
+    
+            var poly_line_0249a19331ea51316ec5e0b6c0a386cf = L.polyline(
+                [[40.72106289863589, -73.9981956481934], [40.720996379852295, -73.99825143814088], [40.72010874748229, -73.99899291992189], [40.7200527191162, -73.999041557312]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_afb8fc25302b1aeb2fe23ca164f735f0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_71a4b6973a5c94d5f0e5ed6a07d4d92f = $(`<div id="html_71a4b6973a5c94d5f0e5ed6a07d4d92f" style="width: 100.0%; height: 100.0%;">Lafayette Street / 944692441 / 1</div>`)[0];
+                popup_afb8fc25302b1aeb2fe23ca164f735f0.setContent(html_71a4b6973a5c94d5f0e5ed6a07d4d92f);
+            
+        
+
+        poly_line_0249a19331ea51316ec5e0b6c0a386cf.bindPopup(popup_afb8fc25302b1aeb2fe23ca164f735f0)
+        ;
+
+        
+    
+    
+            var marker_76e2672a45ae4148acceffcad3e4802f = L.marker(
+                [40.72106289863589, -73.9981956481934],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_b7fa541cc83e4c0a6068f7c8b6da4b70 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_76e2672a45ae4148acceffcad3e4802f.setIcon(icon_b7fa541cc83e4c0a6068f7c8b6da4b70);
+        
+    
+        var popup_26d68fb34fa6e545bc3cecac45a70158 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_95fe97a682fdcb0c02251667e65f369f = $(`<div id="html_95fe97a682fdcb0c02251667e65f369f" style="width: 100.0%; height: 100.0%;">Start of segment 2179862</div>`)[0];
+                popup_26d68fb34fa6e545bc3cecac45a70158.setContent(html_95fe97a682fdcb0c02251667e65f369f);
+            
+        
+
+        marker_76e2672a45ae4148acceffcad3e4802f.bindPopup(popup_26d68fb34fa6e545bc3cecac45a70158)
+        ;
+
+        
+    
+    
+            var marker_2c9785eebf00169cddcafdb3c856db35 = L.marker(
+                [40.7200527191162, -73.999041557312],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_b67a3c5531bb7ac2dd83508aa86fe126 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2c9785eebf00169cddcafdb3c856db35.setIcon(icon_b67a3c5531bb7ac2dd83508aa86fe126);
+        
+    
+        var popup_260421073fa3ba8639f7639a245a762b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_27cd11790c76001fce3db079d29825d7 = $(`<div id="html_27cd11790c76001fce3db079d29825d7" style="width: 100.0%; height: 100.0%;">End of segment 2179862</div>`)[0];
+                popup_260421073fa3ba8639f7639a245a762b.setContent(html_27cd11790c76001fce3db079d29825d7);
+            
+        
+
+        marker_2c9785eebf00169cddcafdb3c856db35.bindPopup(popup_260421073fa3ba8639f7639a245a762b)
+        ;
+
+        
+    
+    
+            var poly_line_4725e888d80516cef8fd8b59e3306a25 = L.polyline(
+                [[40.7221827507019, -74.00065708160399], [40.72221207618709, -74.0007171630859], [40.7225208282471, -74.0013456344604], [40.722550868987994, -74.0014066696167]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_e5a36ca53ac64fec3e2f57e876854c15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b362cf00487307e02a088bb4ec2a464a = $(`<div id="html_b362cf00487307e02a088bb4ec2a464a" style="width: 100.0%; height: 100.0%;">Broome Street / 968737543 / 2</div>`)[0];
+                popup_e5a36ca53ac64fec3e2f57e876854c15.setContent(html_b362cf00487307e02a088bb4ec2a464a);
+            
+        
+
+        poly_line_4725e888d80516cef8fd8b59e3306a25.bindPopup(popup_e5a36ca53ac64fec3e2f57e876854c15)
+        ;
+
+        
+    
+    
+            var marker_cc91782a696d37dc7d6052c15eba7818 = L.marker(
+                [40.7221827507019, -74.00065708160399],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_208505e85055172e9172b9d40eb99fa3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_cc91782a696d37dc7d6052c15eba7818.setIcon(icon_208505e85055172e9172b9d40eb99fa3);
+        
+    
+        var popup_2e31da2683f6c7dcbd81b5df8522bf26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_714ffcbff9918ba7cf9d33e475b506c5 = $(`<div id="html_714ffcbff9918ba7cf9d33e475b506c5" style="width: 100.0%; height: 100.0%;">Start of segment 2180238</div>`)[0];
+                popup_2e31da2683f6c7dcbd81b5df8522bf26.setContent(html_714ffcbff9918ba7cf9d33e475b506c5);
+            
+        
+
+        marker_cc91782a696d37dc7d6052c15eba7818.bindPopup(popup_2e31da2683f6c7dcbd81b5df8522bf26)
+        ;
+
+        
+    
+    
+            var marker_d716ebe04ef670f7a5605b4d663af523 = L.marker(
+                [40.722550868987994, -74.0014066696167],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_be739090d8667a41ecaae0233c625ce1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d716ebe04ef670f7a5605b4d663af523.setIcon(icon_be739090d8667a41ecaae0233c625ce1);
+        
+    
+        var popup_84870da301880845f760fd415c682ac0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_930621be589e0a245202d6263faea4ea = $(`<div id="html_930621be589e0a245202d6263faea4ea" style="width: 100.0%; height: 100.0%;">End of segment 2180238</div>`)[0];
+                popup_84870da301880845f760fd415c682ac0.setContent(html_930621be589e0a245202d6263faea4ea);
+            
+        
+
+        marker_d716ebe04ef670f7a5605b4d663af523.bindPopup(popup_84870da301880845f760fd415c682ac0)
+        ;
+
+        
+    
+    
+            var poly_line_8fab94eb94543928de51b0eb4d5d7f5d = L.polyline(
+                [[40.7221827507019, -74.00065708160399], [40.72221207618709, -74.0007171630859], [40.7225208282471, -74.0013456344604], [40.722550868987994, -74.0014066696167]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_bcc9d80dbe31d20b866b6a2291664fce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5dfba982fc998e373bee9a6807867018 = $(`<div id="html_5dfba982fc998e373bee9a6807867018" style="width: 100.0%; height: 100.0%;">Broome Street / 968737543 / 2</div>`)[0];
+                popup_bcc9d80dbe31d20b866b6a2291664fce.setContent(html_5dfba982fc998e373bee9a6807867018);
+            
+        
+
+        poly_line_8fab94eb94543928de51b0eb4d5d7f5d.bindPopup(popup_bcc9d80dbe31d20b866b6a2291664fce)
+        ;
+
+        
+    
+    
+            var marker_b2253954d14c412beb2ee844332b4559 = L.marker(
+                [40.7221827507019, -74.00065708160399],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_edf47bb7fa0f8f06c6c08b8f4e8b21a3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b2253954d14c412beb2ee844332b4559.setIcon(icon_edf47bb7fa0f8f06c6c08b8f4e8b21a3);
+        
+    
+        var popup_d37138fbb6731a2a668cfd867a3c3e70 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d50aac506a1f5297d8664d3a75ce74e6 = $(`<div id="html_d50aac506a1f5297d8664d3a75ce74e6" style="width: 100.0%; height: 100.0%;">Start of segment 2180244</div>`)[0];
+                popup_d37138fbb6731a2a668cfd867a3c3e70.setContent(html_d50aac506a1f5297d8664d3a75ce74e6);
+            
+        
+
+        marker_b2253954d14c412beb2ee844332b4559.bindPopup(popup_d37138fbb6731a2a668cfd867a3c3e70)
+        ;
+
+        
+    
+    
+            var marker_aafabd7df878e732264da8fa988a04dd = L.marker(
+                [40.722550868987994, -74.0014066696167],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_1d24e72aeb7f2ee79624035a9d094773 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_aafabd7df878e732264da8fa988a04dd.setIcon(icon_1d24e72aeb7f2ee79624035a9d094773);
+        
+    
+        var popup_204c8da29cbcd5dc5828cb4fc3cbdde5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_922ec57e375c7119fc21d800852c87d7 = $(`<div id="html_922ec57e375c7119fc21d800852c87d7" style="width: 100.0%; height: 100.0%;">End of segment 2180244</div>`)[0];
+                popup_204c8da29cbcd5dc5828cb4fc3cbdde5.setContent(html_922ec57e375c7119fc21d800852c87d7);
+            
+        
+
+        marker_aafabd7df878e732264da8fa988a04dd.bindPopup(popup_204c8da29cbcd5dc5828cb4fc3cbdde5)
+        ;
+
+        
+    
+    
+            var poly_line_edeca93cc4cfcac85c85a4032fe8d212 = L.polyline(
+                [[40.72178888320921, -73.9998550415039], [40.721839189529405, -73.9999575614929], [40.72215461730959, -74.00059986114499], [40.7221827507019, -74.00065708160399]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_696d5107ec72d6759bc0b68ec3ebe9a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e9df33d986e3e36d09f1cc947910489e = $(`<div id="html_e9df33d986e3e36d09f1cc947910489e" style="width: 100.0%; height: 100.0%;">Broome Street / 968737543 / 1</div>`)[0];
+                popup_696d5107ec72d6759bc0b68ec3ebe9a1.setContent(html_e9df33d986e3e36d09f1cc947910489e);
+            
+        
+
+        poly_line_edeca93cc4cfcac85c85a4032fe8d212.bindPopup(popup_696d5107ec72d6759bc0b68ec3ebe9a1)
+        ;
+
+        
+    
+    
+            var marker_2449f140a6e736f417d4efbb94a60045 = L.marker(
+                [40.72178888320921, -73.9998550415039],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_720a162bfcfcd40dad8c69fac694a660 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2449f140a6e736f417d4efbb94a60045.setIcon(icon_720a162bfcfcd40dad8c69fac694a660);
+        
+    
+        var popup_26fe443d399513d76012fbb85d1a5e83 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9be4b9b47619f3888bd9505c4935888d = $(`<div id="html_9be4b9b47619f3888bd9505c4935888d" style="width: 100.0%; height: 100.0%;">Start of segment 2182663</div>`)[0];
+                popup_26fe443d399513d76012fbb85d1a5e83.setContent(html_9be4b9b47619f3888bd9505c4935888d);
+            
+        
+
+        marker_2449f140a6e736f417d4efbb94a60045.bindPopup(popup_26fe443d399513d76012fbb85d1a5e83)
+        ;
+
+        
+    
+    
+            var marker_424bc0030aeb3d43646af955eea8ce5d = L.marker(
+                [40.7221827507019, -74.00065708160399],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_691a92660c92f1ab0bcf133cbccd3bb9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_424bc0030aeb3d43646af955eea8ce5d.setIcon(icon_691a92660c92f1ab0bcf133cbccd3bb9);
+        
+    
+        var popup_0e44804e346795601ecd632b5e9a2fa7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_22d3253ffb9e25471a9ac0c3558cea7d = $(`<div id="html_22d3253ffb9e25471a9ac0c3558cea7d" style="width: 100.0%; height: 100.0%;">End of segment 2182663</div>`)[0];
+                popup_0e44804e346795601ecd632b5e9a2fa7.setContent(html_22d3253ffb9e25471a9ac0c3558cea7d);
+            
+        
+
+        marker_424bc0030aeb3d43646af955eea8ce5d.bindPopup(popup_0e44804e346795601ecd632b5e9a2fa7)
+        ;
+
+        
+    
+    
+            var poly_line_04cd1939dbf23a719bb996642eb3d2f4 = L.polyline(
+                [[40.72178888320921, -73.9998550415039], [40.721839189529405, -73.9999575614929], [40.72215461730959, -74.00059986114499], [40.7221827507019, -74.00065708160399]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_a2b8b10f00af5b89754a20eaadbd2965 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_21472806b36f1e42fb557544e3e21272 = $(`<div id="html_21472806b36f1e42fb557544e3e21272" style="width: 100.0%; height: 100.0%;">Broome Street / 968737543 / 1</div>`)[0];
+                popup_a2b8b10f00af5b89754a20eaadbd2965.setContent(html_21472806b36f1e42fb557544e3e21272);
+            
+        
+
+        poly_line_04cd1939dbf23a719bb996642eb3d2f4.bindPopup(popup_a2b8b10f00af5b89754a20eaadbd2965)
+        ;
+
+        
+    
+    
+            var marker_41cc5b12425a863bfff8eb61bde15b2a = L.marker(
+                [40.72178888320921, -73.9998550415039],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_ad5f51c6aa352c75caada0984bdbe86b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_41cc5b12425a863bfff8eb61bde15b2a.setIcon(icon_ad5f51c6aa352c75caada0984bdbe86b);
+        
+    
+        var popup_cf36150705c63fa38aa6c381de003334 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0414b501476194741340ac3489ea10f0 = $(`<div id="html_0414b501476194741340ac3489ea10f0" style="width: 100.0%; height: 100.0%;">Start of segment 2182666</div>`)[0];
+                popup_cf36150705c63fa38aa6c381de003334.setContent(html_0414b501476194741340ac3489ea10f0);
+            
+        
+
+        marker_41cc5b12425a863bfff8eb61bde15b2a.bindPopup(popup_cf36150705c63fa38aa6c381de003334)
+        ;
+
+        
+    
+    
+            var marker_68cebed0e1857756bd0aa7ff96312674 = L.marker(
+                [40.7221827507019, -74.00065708160399],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_94d0c708a2af4012e0d9ed8dbfac1b2b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_68cebed0e1857756bd0aa7ff96312674.setIcon(icon_94d0c708a2af4012e0d9ed8dbfac1b2b);
+        
+    
+        var popup_402a5f1583b724bb45771b794b76b62e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_47750f1f6b27ab02439851da00d8682d = $(`<div id="html_47750f1f6b27ab02439851da00d8682d" style="width: 100.0%; height: 100.0%;">End of segment 2182666</div>`)[0];
+                popup_402a5f1583b724bb45771b794b76b62e.setContent(html_47750f1f6b27ab02439851da00d8682d);
+            
+        
+
+        marker_68cebed0e1857756bd0aa7ff96312674.bindPopup(popup_402a5f1583b724bb45771b794b76b62e)
+        ;
+
+        
+    
+    
+            var poly_line_f04adb7b77d8ffa91891d8d5a8566109 = L.polyline(
+                [[40.72106289863589, -73.9981956481934], [40.7211129665375, -73.99831247329709], [40.72139477729801, -73.9989700317383], [40.7214207649231, -73.9990305900574]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_786db0a3ee2aa55b452c2ec56d89fb10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac784b9422bfe9c1a3e2caa0b1d87bcd = $(`<div id="html_ac784b9422bfe9c1a3e2caa0b1d87bcd" style="width: 100.0%; height: 100.0%;">Broome Street / 46348767 / 1</div>`)[0];
+                popup_786db0a3ee2aa55b452c2ec56d89fb10.setContent(html_ac784b9422bfe9c1a3e2caa0b1d87bcd);
+            
+        
+
+        poly_line_f04adb7b77d8ffa91891d8d5a8566109.bindPopup(popup_786db0a3ee2aa55b452c2ec56d89fb10)
+        ;
+
+        
+    
+    
+            var marker_37a2e3815bb3e6af42285bd43620e295 = L.marker(
+                [40.72106289863589, -73.9981956481934],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_108f03714e8dc508510f8812b3912da0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_37a2e3815bb3e6af42285bd43620e295.setIcon(icon_108f03714e8dc508510f8812b3912da0);
+        
+    
+        var popup_e5f59549053fdc9fcd36102be28c2df4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb59333fef2be18a18249d4ac540790a = $(`<div id="html_eb59333fef2be18a18249d4ac540790a" style="width: 100.0%; height: 100.0%;">Start of segment 2184196</div>`)[0];
+                popup_e5f59549053fdc9fcd36102be28c2df4.setContent(html_eb59333fef2be18a18249d4ac540790a);
+            
+        
+
+        marker_37a2e3815bb3e6af42285bd43620e295.bindPopup(popup_e5f59549053fdc9fcd36102be28c2df4)
+        ;
+
+        
+    
+    
+            var marker_8a3fc03382f3d991372c6c1ed1aea5aa = L.marker(
+                [40.7214207649231, -73.9990305900574],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_7f324c430d646e2a1c66825d48c71bfe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8a3fc03382f3d991372c6c1ed1aea5aa.setIcon(icon_7f324c430d646e2a1c66825d48c71bfe);
+        
+    
+        var popup_d016fa6cbcb33c7af2871840ff63d070 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_98ab3a22b6e6ad16add368b701fd3c73 = $(`<div id="html_98ab3a22b6e6ad16add368b701fd3c73" style="width: 100.0%; height: 100.0%;">End of segment 2184196</div>`)[0];
+                popup_d016fa6cbcb33c7af2871840ff63d070.setContent(html_98ab3a22b6e6ad16add368b701fd3c73);
+            
+        
+
+        marker_8a3fc03382f3d991372c6c1ed1aea5aa.bindPopup(popup_d016fa6cbcb33c7af2871840ff63d070)
+        ;
+
+        
+    
+    
+            var poly_line_cf54e876a5480a169eb3fb56f66049c1 = L.polyline(
+                [[40.72106289863589, -73.9981956481934], [40.7211129665375, -73.99831247329709], [40.72139477729801, -73.9989700317383], [40.7214207649231, -73.9990305900574]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_b19004c75836f28cccb7d7f893ad421c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_88b003b8fa9a2a97affa3c79d573a906 = $(`<div id="html_88b003b8fa9a2a97affa3c79d573a906" style="width: 100.0%; height: 100.0%;">Broome Street / 46348767 / 1</div>`)[0];
+                popup_b19004c75836f28cccb7d7f893ad421c.setContent(html_88b003b8fa9a2a97affa3c79d573a906);
+            
+        
+
+        poly_line_cf54e876a5480a169eb3fb56f66049c1.bindPopup(popup_b19004c75836f28cccb7d7f893ad421c)
+        ;
+
+        
+    
+    
+            var marker_6de1096d6dedeb248a9f790e8fb49498 = L.marker(
+                [40.72106289863589, -73.9981956481934],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_6869332005f1315058b7ee7c23fe899a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6de1096d6dedeb248a9f790e8fb49498.setIcon(icon_6869332005f1315058b7ee7c23fe899a);
+        
+    
+        var popup_47b0e66bb02b3d339226d304c5ae877e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3abd57f2ef783922bcad81affc151df = $(`<div id="html_d3abd57f2ef783922bcad81affc151df" style="width: 100.0%; height: 100.0%;">Start of segment 2184197</div>`)[0];
+                popup_47b0e66bb02b3d339226d304c5ae877e.setContent(html_d3abd57f2ef783922bcad81affc151df);
+            
+        
+
+        marker_6de1096d6dedeb248a9f790e8fb49498.bindPopup(popup_47b0e66bb02b3d339226d304c5ae877e)
+        ;
+
+        
+    
+    
+            var marker_e8fa62b1873b83b130d23473dd1425d9 = L.marker(
+                [40.7214207649231, -73.9990305900574],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_49a75760a0fa689b118f374d401f3026 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e8fa62b1873b83b130d23473dd1425d9.setIcon(icon_49a75760a0fa689b118f374d401f3026);
+        
+    
+        var popup_82e4a98f8a107c9a03f8568e5e1fb6c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a15324bee88371452fe455c511232794 = $(`<div id="html_a15324bee88371452fe455c511232794" style="width: 100.0%; height: 100.0%;">End of segment 2184197</div>`)[0];
+                popup_82e4a98f8a107c9a03f8568e5e1fb6c6.setContent(html_a15324bee88371452fe455c511232794);
+            
+        
+
+        marker_e8fa62b1873b83b130d23473dd1425d9.bindPopup(popup_82e4a98f8a107c9a03f8568e5e1fb6c6)
+        ;
+
+        
+    
+    
+            var poly_line_95f3eb4c9949e7b0c50a3996ce3d71d6 = L.polyline(
+                [[40.72178888320921, -73.9998550415039], [40.721726179122896, -73.9999089241028], [40.721715927123995, -73.99991750717159], [40.72160530090329, -74.00001192092901], [40.7209119796753, -74.0006031990051], [40.7208633422852, -74.0006446838379]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_9f2088b39bdd40dbe3cb1c3a4082390d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dd92fcacedc4ffedaca73f9225288677 = $(`<div id="html_dd92fcacedc4ffedaca73f9225288677" style="width: 100.0%; height: 100.0%;">Broadway / 968737544 / 1</div>`)[0];
+                popup_9f2088b39bdd40dbe3cb1c3a4082390d.setContent(html_dd92fcacedc4ffedaca73f9225288677);
+            
+        
+
+        poly_line_95f3eb4c9949e7b0c50a3996ce3d71d6.bindPopup(popup_9f2088b39bdd40dbe3cb1c3a4082390d)
+        ;
+
+        
+    
+    
+            var marker_24edabfe141d1a62330185b0268085b6 = L.marker(
+                [40.72178888320921, -73.9998550415039],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_c3cb960b4552b6ef7bab65836bd13aa2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_24edabfe141d1a62330185b0268085b6.setIcon(icon_c3cb960b4552b6ef7bab65836bd13aa2);
+        
+    
+        var popup_e423d85134746f8a781ab75ca12ce9d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_abcc8e29222f8b4861a048d0b6b825c0 = $(`<div id="html_abcc8e29222f8b4861a048d0b6b825c0" style="width: 100.0%; height: 100.0%;">Start of segment 2185302</div>`)[0];
+                popup_e423d85134746f8a781ab75ca12ce9d8.setContent(html_abcc8e29222f8b4861a048d0b6b825c0);
+            
+        
+
+        marker_24edabfe141d1a62330185b0268085b6.bindPopup(popup_e423d85134746f8a781ab75ca12ce9d8)
+        ;
+
+        
+    
+    
+            var marker_a8f88b190c797826f02f111817cd06cd = L.marker(
+                [40.7208633422852, -74.0006446838379],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_1ca7abca6ce133be0a74dbdb2f881b6f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a8f88b190c797826f02f111817cd06cd.setIcon(icon_1ca7abca6ce133be0a74dbdb2f881b6f);
+        
+    
+        var popup_6fb277c8f883ecc581cf4d2161f43651 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_35a4650ab5e575d89c0f5e7e4ae3e6c4 = $(`<div id="html_35a4650ab5e575d89c0f5e7e4ae3e6c4" style="width: 100.0%; height: 100.0%;">End of segment 2185302</div>`)[0];
+                popup_6fb277c8f883ecc581cf4d2161f43651.setContent(html_35a4650ab5e575d89c0f5e7e4ae3e6c4);
+            
+        
+
+        marker_a8f88b190c797826f02f111817cd06cd.bindPopup(popup_6fb277c8f883ecc581cf4d2161f43651)
+        ;
+
+        
+    
+    
+            var poly_line_55ff9153ca35b7e88b04c85542378357 = L.polyline(
+                [[40.72178888320921, -73.9998550415039], [40.721726179122896, -73.9999089241028], [40.721715927123995, -73.99991750717159], [40.72160530090329, -74.00001192092901], [40.7209119796753, -74.0006031990051], [40.7208633422852, -74.0006446838379]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_c66f0f8170bee97cdae1f191f50774d0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d7f934a85655f345adae652c13da40b = $(`<div id="html_7d7f934a85655f345adae652c13da40b" style="width: 100.0%; height: 100.0%;">Broadway / 968737544 / 1</div>`)[0];
+                popup_c66f0f8170bee97cdae1f191f50774d0.setContent(html_7d7f934a85655f345adae652c13da40b);
+            
+        
+
+        poly_line_55ff9153ca35b7e88b04c85542378357.bindPopup(popup_c66f0f8170bee97cdae1f191f50774d0)
+        ;
+
+        
+    
+    
+            var marker_d3f0a6922cd88e37d4edb2617c10aa6c = L.marker(
+                [40.72178888320921, -73.9998550415039],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_6452645d742457d5594c071dff4180e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d3f0a6922cd88e37d4edb2617c10aa6c.setIcon(icon_6452645d742457d5594c071dff4180e9);
+        
+    
+        var popup_e037629e8c6e44e7679e658a0b4f9dd4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aea0a8d99e9d1891ae42e3284dd53252 = $(`<div id="html_aea0a8d99e9d1891ae42e3284dd53252" style="width: 100.0%; height: 100.0%;">Start of segment 2185307</div>`)[0];
+                popup_e037629e8c6e44e7679e658a0b4f9dd4.setContent(html_aea0a8d99e9d1891ae42e3284dd53252);
+            
+        
+
+        marker_d3f0a6922cd88e37d4edb2617c10aa6c.bindPopup(popup_e037629e8c6e44e7679e658a0b4f9dd4)
+        ;
+
+        
+    
+    
+            var marker_f70a9f0a8dcd5b9fe3c2f15ef1a9dce4 = L.marker(
+                [40.7208633422852, -74.0006446838379],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_cc0d861e17fda7509efd9f1c291b9906 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f70a9f0a8dcd5b9fe3c2f15ef1a9dce4.setIcon(icon_cc0d861e17fda7509efd9f1c291b9906);
+        
+    
+        var popup_1ee453844fe72f50c4501f733904c1a6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fbe22ee611e740f4d532b7f57f762e80 = $(`<div id="html_fbe22ee611e740f4d532b7f57f762e80" style="width: 100.0%; height: 100.0%;">End of segment 2185307</div>`)[0];
+                popup_1ee453844fe72f50c4501f733904c1a6.setContent(html_fbe22ee611e740f4d532b7f57f762e80);
+            
+        
+
+        marker_f70a9f0a8dcd5b9fe3c2f15ef1a9dce4.bindPopup(popup_1ee453844fe72f50c4501f733904c1a6)
+        ;
+
+        
+    
+    
+            var poly_line_5065874868a04ccabaf9dcb9ca387634 = L.polyline(
+                [[40.72145080566409, -73.9973978996277], [40.7214751243591, -73.9974699020386], [40.7215406894684, -73.99766397476199], [40.721581459045396, -73.9977850914001]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_d3dbeb4b57c26e3070a8292fa32903c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_12d10aba1bb829311e435e18a6463468 = $(`<div id="html_12d10aba1bb829311e435e18a6463468" style="width: 100.0%; height: 100.0%;">Kenmare Street / 991205021 / 1</div>`)[0];
+                popup_d3dbeb4b57c26e3070a8292fa32903c5.setContent(html_12d10aba1bb829311e435e18a6463468);
+            
+        
+
+        poly_line_5065874868a04ccabaf9dcb9ca387634.bindPopup(popup_d3dbeb4b57c26e3070a8292fa32903c5)
+        ;
+
+        
+    
+    
+            var marker_98fde6646a0a399566f76767d437eb33 = L.marker(
+                [40.72145080566409, -73.9973978996277],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_a70d277761688872c60928905dbe068b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_98fde6646a0a399566f76767d437eb33.setIcon(icon_a70d277761688872c60928905dbe068b);
+        
+    
+        var popup_d53ea0ad2452532dc2f5c86d1111ec67 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_941778508ac69c5c076f1d557172b894 = $(`<div id="html_941778508ac69c5c076f1d557172b894" style="width: 100.0%; height: 100.0%;">Start of segment 2187392</div>`)[0];
+                popup_d53ea0ad2452532dc2f5c86d1111ec67.setContent(html_941778508ac69c5c076f1d557172b894);
+            
+        
+
+        marker_98fde6646a0a399566f76767d437eb33.bindPopup(popup_d53ea0ad2452532dc2f5c86d1111ec67)
+        ;
+
+        
+    
+    
+            var marker_4b30781926082c0d33a19d428f14b051 = L.marker(
+                [40.721581459045396, -73.9977850914001],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_76cb8b9a1aa69d21789d9b894d248bfa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4b30781926082c0d33a19d428f14b051.setIcon(icon_76cb8b9a1aa69d21789d9b894d248bfa);
+        
+    
+        var popup_efa653ec7e48e6d7ff18a07351ff77b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e02be4daeec954dd637662fbca259b86 = $(`<div id="html_e02be4daeec954dd637662fbca259b86" style="width: 100.0%; height: 100.0%;">End of segment 2187392</div>`)[0];
+                popup_efa653ec7e48e6d7ff18a07351ff77b8.setContent(html_e02be4daeec954dd637662fbca259b86);
+            
+        
+
+        marker_4b30781926082c0d33a19d428f14b051.bindPopup(popup_efa653ec7e48e6d7ff18a07351ff77b8)
+        ;
+
+        
+    
+    
+            var poly_line_4d767a321a8dbec5b30402e2b0ef9540 = L.polyline(
+                [[40.72145080566409, -73.9973978996277], [40.7214751243591, -73.9974699020386], [40.7215406894684, -73.99766397476199], [40.721581459045396, -73.9977850914001]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_117ae50f744d30ca42354386334b0a14 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ee4ec54114cdbc2fbb46d9f03014951 = $(`<div id="html_9ee4ec54114cdbc2fbb46d9f03014951" style="width: 100.0%; height: 100.0%;">Kenmare Street / 991205021 / 1</div>`)[0];
+                popup_117ae50f744d30ca42354386334b0a14.setContent(html_9ee4ec54114cdbc2fbb46d9f03014951);
+            
+        
+
+        poly_line_4d767a321a8dbec5b30402e2b0ef9540.bindPopup(popup_117ae50f744d30ca42354386334b0a14)
+        ;
+
+        
+    
+    
+            var marker_9df2d87d97fb5e7320fe978dbf35d94c = L.marker(
+                [40.72145080566409, -73.9973978996277],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_db87a79f326b6eb5877df117bd7e0499 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9df2d87d97fb5e7320fe978dbf35d94c.setIcon(icon_db87a79f326b6eb5877df117bd7e0499);
+        
+    
+        var popup_753dd61d1449dd749b0a2053ddc6b327 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10429d7937c78db36c61e4649c504677 = $(`<div id="html_10429d7937c78db36c61e4649c504677" style="width: 100.0%; height: 100.0%;">Start of segment 2187394</div>`)[0];
+                popup_753dd61d1449dd749b0a2053ddc6b327.setContent(html_10429d7937c78db36c61e4649c504677);
+            
+        
+
+        marker_9df2d87d97fb5e7320fe978dbf35d94c.bindPopup(popup_753dd61d1449dd749b0a2053ddc6b327)
+        ;
+
+        
+    
+    
+            var marker_4b942745bb25136aeec2cb1597aba49e = L.marker(
+                [40.721581459045396, -73.9977850914001],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_7bf30ba1bb35cf593a4ac2ddcba868e0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4b942745bb25136aeec2cb1597aba49e.setIcon(icon_7bf30ba1bb35cf593a4ac2ddcba868e0);
+        
+    
+        var popup_c02685bc98db524183907ac465a245ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1169cfac2db1f64808f7e4372c7f8e1 = $(`<div id="html_d1169cfac2db1f64808f7e4372c7f8e1" style="width: 100.0%; height: 100.0%;">End of segment 2187394</div>`)[0];
+                popup_c02685bc98db524183907ac465a245ad.setContent(html_d1169cfac2db1f64808f7e4372c7f8e1);
+            
+        
+
+        marker_4b942745bb25136aeec2cb1597aba49e.bindPopup(popup_c02685bc98db524183907ac465a245ad)
+        ;
+
+        
+    
+    
+            var poly_line_7978d7476fd83b9d4a97ed5f4bddd474 = L.polyline(
+                [[40.72145080566409, -73.9973978996277], [40.7214751243591, -73.9974699020386], [40.7215406894684, -73.99766397476199], [40.721581459045396, -73.9977850914001]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_83706b7aa1ec4b4f0abec6c58cbca28a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d891b06a5332142ed784556f3a6b4f4a = $(`<div id="html_d891b06a5332142ed784556f3a6b4f4a" style="width: 100.0%; height: 100.0%;">Kenmare Street / 991205021 / 1</div>`)[0];
+                popup_83706b7aa1ec4b4f0abec6c58cbca28a.setContent(html_d891b06a5332142ed784556f3a6b4f4a);
+            
+        
+
+        poly_line_7978d7476fd83b9d4a97ed5f4bddd474.bindPopup(popup_83706b7aa1ec4b4f0abec6c58cbca28a)
+        ;
+
+        
+    
+    
+            var marker_e5fa0ca5580ff4b92044648a854d75c5 = L.marker(
+                [40.72145080566409, -73.9973978996277],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_ceb5fcfe7673cacb60babe7af163e9ef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e5fa0ca5580ff4b92044648a854d75c5.setIcon(icon_ceb5fcfe7673cacb60babe7af163e9ef);
+        
+    
+        var popup_a51d5e9dbe36aa5c6904459a335f3a14 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_18579921f97d424b3d6ad09731c0b62d = $(`<div id="html_18579921f97d424b3d6ad09731c0b62d" style="width: 100.0%; height: 100.0%;">Start of segment 2187396</div>`)[0];
+                popup_a51d5e9dbe36aa5c6904459a335f3a14.setContent(html_18579921f97d424b3d6ad09731c0b62d);
+            
+        
+
+        marker_e5fa0ca5580ff4b92044648a854d75c5.bindPopup(popup_a51d5e9dbe36aa5c6904459a335f3a14)
+        ;
+
+        
+    
+    
+            var marker_bad7d5c08e907d2b8d8ad9052d5f2f30 = L.marker(
+                [40.721581459045396, -73.9977850914001],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_452eac82c96686520f28dda7c659027c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_bad7d5c08e907d2b8d8ad9052d5f2f30.setIcon(icon_452eac82c96686520f28dda7c659027c);
+        
+    
+        var popup_dd4a44a98268a796eba9b201e6a862cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dd3f41c4797476e6cb020a0f3583c815 = $(`<div id="html_dd3f41c4797476e6cb020a0f3583c815" style="width: 100.0%; height: 100.0%;">End of segment 2187396</div>`)[0];
+                popup_dd4a44a98268a796eba9b201e6a862cb.setContent(html_dd3f41c4797476e6cb020a0f3583c815);
+            
+        
+
+        marker_bad7d5c08e907d2b8d8ad9052d5f2f30.bindPopup(popup_dd4a44a98268a796eba9b201e6a862cb)
+        ;
+
+        
+    
+    
+            var poly_line_4f523971513bdb90cce5acb2e50bf391 = L.polyline(
+                [[40.7230207920074, -73.99881172180179], [40.7229835987091, -73.99884319305421], [40.72297739982599, -73.99884843826288], [40.7227351665497, -73.9990539550781], [40.72185778617861, -73.9997968673706], [40.72178888320921, -73.9998550415039]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_b1dd455da86b0c47a502385c4f2f4419 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b8b3805695bb89d71fe9c0a507443776 = $(`<div id="html_b8b3805695bb89d71fe9c0a507443776" style="width: 100.0%; height: 100.0%;">Broadway / 968737542 / 1</div>`)[0];
+                popup_b1dd455da86b0c47a502385c4f2f4419.setContent(html_b8b3805695bb89d71fe9c0a507443776);
+            
+        
+
+        poly_line_4f523971513bdb90cce5acb2e50bf391.bindPopup(popup_b1dd455da86b0c47a502385c4f2f4419)
+        ;
+
+        
+    
+    
+            var marker_94af6d1d3e51fa42a48b30619f106657 = L.marker(
+                [40.7230207920074, -73.99881172180179],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_56afdad2d5db7575abaa1995cdfc167e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_94af6d1d3e51fa42a48b30619f106657.setIcon(icon_56afdad2d5db7575abaa1995cdfc167e);
+        
+    
+        var popup_4b665964a748a0bd506e6b586155c501 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_644f4f30c260f70eecf15baac9b7cab9 = $(`<div id="html_644f4f30c260f70eecf15baac9b7cab9" style="width: 100.0%; height: 100.0%;">Start of segment 2187821</div>`)[0];
+                popup_4b665964a748a0bd506e6b586155c501.setContent(html_644f4f30c260f70eecf15baac9b7cab9);
+            
+        
+
+        marker_94af6d1d3e51fa42a48b30619f106657.bindPopup(popup_4b665964a748a0bd506e6b586155c501)
+        ;
+
+        
+    
+    
+            var marker_acd2e90a32f532238f40f2dc0d621f79 = L.marker(
+                [40.72178888320921, -73.9998550415039],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_308b4ba2468b3645497af313a76b437e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_acd2e90a32f532238f40f2dc0d621f79.setIcon(icon_308b4ba2468b3645497af313a76b437e);
+        
+    
+        var popup_612e3a8c5dc28c1aae43619c22dc6e93 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d7da764e466e7f152c426353559db07 = $(`<div id="html_4d7da764e466e7f152c426353559db07" style="width: 100.0%; height: 100.0%;">End of segment 2187821</div>`)[0];
+                popup_612e3a8c5dc28c1aae43619c22dc6e93.setContent(html_4d7da764e466e7f152c426353559db07);
+            
+        
+
+        marker_acd2e90a32f532238f40f2dc0d621f79.bindPopup(popup_612e3a8c5dc28c1aae43619c22dc6e93)
+        ;
+
+        
+    
+    
+            var poly_line_412eeef4d8c3ecf4e3563bbe770d33c0 = L.polyline(
+                [[40.7230207920074, -73.99881172180179], [40.7229835987091, -73.99884319305421], [40.72297739982599, -73.99884843826288], [40.7227351665497, -73.9990539550781], [40.72185778617861, -73.9997968673706], [40.72178888320921, -73.9998550415039]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+        var popup_db1a38a8c1ee0629e1c9b27af4877c75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e765e7cc694f25d78ac58205b76fe499 = $(`<div id="html_e765e7cc694f25d78ac58205b76fe499" style="width: 100.0%; height: 100.0%;">Broadway / 968737542 / 1</div>`)[0];
+                popup_db1a38a8c1ee0629e1c9b27af4877c75.setContent(html_e765e7cc694f25d78ac58205b76fe499);
+            
+        
+
+        poly_line_412eeef4d8c3ecf4e3563bbe770d33c0.bindPopup(popup_db1a38a8c1ee0629e1c9b27af4877c75)
+        ;
+
+        
+    
+    
+            var marker_e39a263563a43be74059866ac32d0bdc = L.marker(
+                [40.7230207920074, -73.99881172180179],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_b8dbcca91d273cefb348712dd5e33995 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e39a263563a43be74059866ac32d0bdc.setIcon(icon_b8dbcca91d273cefb348712dd5e33995);
+        
+    
+        var popup_60172aae1261c3e8e7ef4efaa4ca2bcd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_617e5fa269356ea639258e3a2fc70c36 = $(`<div id="html_617e5fa269356ea639258e3a2fc70c36" style="width: 100.0%; height: 100.0%;">Start of segment 2187825</div>`)[0];
+                popup_60172aae1261c3e8e7ef4efaa4ca2bcd.setContent(html_617e5fa269356ea639258e3a2fc70c36);
+            
+        
+
+        marker_e39a263563a43be74059866ac32d0bdc.bindPopup(popup_60172aae1261c3e8e7ef4efaa4ca2bcd)
+        ;
+
+        
+    
+    
+            var marker_1d8bc0cad28ce231657755bd331f283f = L.marker(
+                [40.72178888320921, -73.9998550415039],
+                {
+}
+            ).addTo(map_ca9a5b9662b1822200996e818b2570f1);
+        
+    
+            var icon_f86b67e02ddea311aed0588256da1afd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1d8bc0cad28ce231657755bd331f283f.setIcon(icon_f86b67e02ddea311aed0588256da1afd);
+        
+    
+        var popup_d8c2603d19cc6817bc6744ea89420ccf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ffa47e9febe10bbae9238ed5900f9297 = $(`<div id="html_ffa47e9febe10bbae9238ed5900f9297" style="width: 100.0%; height: 100.0%;">End of segment 2187825</div>`)[0];
+                popup_d8c2603d19cc6817bc6744ea89420ccf.setContent(html_ffa47e9febe10bbae9238ed5900f9297);
+            
+        
+
+        marker_1d8bc0cad28ce231657755bd331f283f.bindPopup(popup_d8c2603d19cc6817bc6744ea89420ccf)
+        ;
+
+        
+    
+</script>
+</html>
