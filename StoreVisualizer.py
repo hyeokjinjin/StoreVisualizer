@@ -113,7 +113,7 @@ class StoreVisibility:
 
 # Example usage
 geo = StoreVisibility()
-coordinates = geo.get_coordinates("500 Broadway, New York, NY 10012")
+coordinates = geo.get_coordinates("190 Bowery, New York, NY 10012")
 print("Coordinates:", coordinates)
 
 geo.read_data("traffic_data_sample.csv")
