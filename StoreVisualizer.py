@@ -95,30 +95,27 @@ class StoreVisibility:
         obstacles_proj = obstacles.to_crs(projected_crs)
         nearby_segments_proj = nearby_segments.to_crs(projected_crs)
 
-        visible_segments = []
+        truncated_segments = []
         for seg in nearby_segments_proj.geometry:
-            # Check segment endpoints first
-            for point in [seg.coords[0], seg.coords[-1]]:
-                if self.is_point_visible(storefront_proj, Point(point), obstacles_proj):
-                    visible_segments.append(seg)
-                    break
-            else:  # Only check interior points if endpoints aren't visible
-                for i in range(num_samples):
-                    sample_point = seg.interpolate(i / (num_samples - 1), normalized=True)
-                    if self.is_point_visible(storefront_proj, sample_point, obstacles_proj):
-                        visible_segments.append(seg)
-                        break
+            visible_points = []
+            
+            # Sample points along the segment
+            for i in range(num_samples + 1):
+                sample_point = seg.interpolate(i / num_samples, normalized=True)
+                if self.is_point_visible(storefront_proj, sample_point, obstacles_proj):
+                    visible_points.append(sample_point)
+            
+            # If there are visible points, form a truncated segment
+            if len(visible_points) > 1:
+                truncated_segments.append(LineString(visible_points))
         
-        return gpd.GeoDataFrame(geometry=visible_segments, crs=projected_crs).to_crs("EPSG:4326")
+        return gpd.GeoDataFrame(geometry=truncated_segments, crs=projected_crs).to_crs("EPSG:4326")
 
 
     def generate_map(self, nearby_segments, filename):
         # Check if store coordinates exist
         if self.store_latitude is None or self.store_longitude is None:
             raise ValueError("Error: Store coordinates not set. Run get_coordinates() first.")
-        
-        if nearby_segments is None or nearby_segments.empty:
-            raise ValueError("No nearby segments found.")
             
         # Create a map centered at the store's coordinates
         store_map = folium.Map(location=[self.store_latitude, self.store_longitude], zoom_start=14)
@@ -138,37 +135,38 @@ class StoreVisibility:
             ).add_to(store_map)
         
         # Add nearby road segments
-        for i, row in nearby_segments.iterrows():
-            if not isinstance(row["geometry"], LineString):
-                print(f"Skipping invalid geometry at index {i}: {row['geometry']}")
-                continue
-            
-            # Extract line coordinates
-            line_coords = [(lat, lon) for lon, lat in row["geometry"].coords]  # Reverse to match folium format
-            
-            # Debugging print
-            # print(f"Adding segment {i}: {line_coords}")
-            
-            # Draw road segment
-            folium.PolyLine(
-                line_coords, 
-                color="blue", 
-                weight=5,
-                popup=row.get("segment_name", f"Road Segment {i}")
-            ).add_to(store_map)
-            
-            # Add markers at start and end of the road segment
-            folium.Marker(
-                line_coords[0],  # Start point
-                icon=folium.Icon(color="green", icon="play"),
-                popup=f"Start of segment {i}"
-            ).add_to(store_map)
-            
-            folium.Marker(
-                line_coords[-1],  # End point
-                icon=folium.Icon(color="blue", icon="stop"),
-                popup=f"End of segment {i}"
-            ).add_to(store_map)
+        if nearby_segments is not None and not nearby_segments.empty:
+            for i, row in nearby_segments.iterrows():
+                if not isinstance(row["geometry"], LineString):
+                    print(f"Skipping invalid geometry at index {i}: {row['geometry']}")
+                    continue
+                
+                # Extract line coordinates
+                line_coords = [(lat, lon) for lon, lat in row["geometry"].coords]  # Reverse to match folium format
+                
+                # Debugging print
+                # print(f"Adding segment {i}: {line_coords}")
+                
+                # Draw road segment
+                folium.PolyLine(
+                    line_coords, 
+                    color="blue", 
+                    weight=5,
+                    popup=row.get("segment_name", f"Road Segment {i}")
+                ).add_to(store_map)
+                
+                # Add markers at start and end of the road segment
+                folium.Marker(
+                    line_coords[0],  # Start point
+                    icon=folium.Icon(color="green", icon="play"),
+                    popup=f"Start of segment {i}"
+                ).add_to(store_map)
+                
+                folium.Marker(
+                    line_coords[-1],  # End point
+                    icon=folium.Icon(color="blue", icon="stop"),
+                    popup=f"End of segment {i}"
+                ).add_to(store_map)
         
         store_map.save(filename)
         print(f"Debug map saved to {filename}")
@@ -176,7 +174,7 @@ class StoreVisibility:
 # Usage example
 if __name__ == "__main__":
     sv = StoreVisibility()
-    address = "609 8th Ave, New York, NY 10018"
+    address = "190 Bowery, New York, NY 10012"
     coordinates = sv.get_coordinates(address)
     print("Coordinates:", coordinates)
     
