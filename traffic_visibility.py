@@ -16,6 +16,7 @@ class TrafficVisibility:
         self.store_latitude, self.store_longitude = lat, lon
         self.gdf = None
         self.obstacles = gpd.GeoDataFrame()
+        self.store_building = gpd.GeoDataFrame()
         
         with open("config.json") as f:
             config = json.load(f)
@@ -79,6 +80,7 @@ class TrafficVisibility:
         
         # Identify and remove store's own building
         store_building_mask = self.obstacles.intersects(store_point)
+        self.store_building = self.obstacles[self.obstacles.geometry.contains(store_point)]
         self.obstacles = self.obstacles[~store_building_mask].copy()
         print(f"Filtered {store_building_mask.sum()} store buildings from obstacles.\n")
 
@@ -89,7 +91,8 @@ class TrafficVisibility:
         return not any(los.intersects(obs.buffer(0.1)) for obs in obstacles_proj.geometry)  # 10cm buffer for tolerance
 
 
-    # Filter only visible segments
+    
+    # Filter only fully visible segments
     def filter_visible_segments(self, nearby_segments, storefront, obstacles, num_samples=50):
         projected_crs = "EPSG:3857"
         
@@ -97,22 +100,17 @@ class TrafficVisibility:
         storefront_proj = gpd.GeoSeries([storefront], crs="EPSG:4326").to_crs(projected_crs).iloc[0]
         obstacles_proj = obstacles.to_crs(projected_crs)
         nearby_segments_proj = nearby_segments.to_crs(projected_crs)
-
-        truncated_segments = []
+        
+        visible_segments = []
         for seg in nearby_segments_proj.geometry:
-            visible_points = []
-            
             # Sample points along the segment
             for i in range(num_samples + 1):
                 sample_point = seg.interpolate(i / num_samples, normalized=True)
                 if self.is_point_visible(storefront_proj, sample_point, obstacles_proj):
-                    visible_points.append(sample_point)
-            
-            # If there are visible points, form a truncated segment
-            if len(visible_points) > 1:
-                truncated_segments.append(LineString(visible_points))
+                    visible_segments.append(seg)
+                    break  # Keep segment if at least one point is visible
         
-        return gpd.GeoDataFrame(geometry=truncated_segments, crs=projected_crs).to_crs("EPSG:4326")
+        return gpd.GeoDataFrame(geometry=visible_segments, crs=projected_crs).to_crs("EPSG:4326")
 
 
     def generate_map(self, nearby_segments, filename):
@@ -132,9 +130,18 @@ class TrafficVisibility:
         
         # Add obstacles
         if not self.obstacles.empty:
+            obstacles_filtered = self.obstacles[self.obstacles.geometry.type.isin(["LineString", "Polygon"])]
             folium.GeoJson(
-                self.obstacles,
+                obstacles_filtered,
                 style_function=lambda x: {'color': 'orange', 'fillOpacity': 0.3}
+            ).add_to(store_map)
+            
+        # Add obstacles
+        if not self.store_building.empty:
+            folium.GeoJson(
+                self.store_building,
+                name="Store Building",
+                style_function=lambda x: {'color': 'red', 'fillOpacity': 0.4}
             ).add_to(store_map)
         
         # Add nearby road segments

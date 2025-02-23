@@ -25,7 +25,9 @@ def extract_state(address):
 
 
 def main():
-    address = "500 Broadway, New York, NY 10012"
+    # address = "190 Bowery, New York, NY 10012"
+    # address = "500 Broadway, New York, NY 10012"
+    address = "609 8th Ave, New York, NY 10018"
     radius = 200
     
     lat, lon = coordinates(address)
