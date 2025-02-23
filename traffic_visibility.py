@@ -25,7 +25,7 @@ class TrafficVisibility:
         df["geometry"] = df["geom"].apply(loads)
         self.gdf = gpd.GeoDataFrame(df, geometry="geometry", crs="EPSG:4326")
         self.gdf = self.gdf.drop(columns=["geom"])
-        print(f"Found {len(self.gdf)} line segments in the dataset.")
+        print(f"Found {len(self.gdf)} line segments in the dataset.\n")
 
 
     # Find all nearby segments given a point and radius
@@ -42,13 +42,15 @@ class TrafficVisibility:
         # Convert GDF and find nearby segments
         gdf_3857 = self.gdf.to_crs(epsg=3857)
         nearby_segments = gdf_3857[gdf_3857.geometry.distance(store_location) <= radius]
-        print(f"Found {len(nearby_segments)} nearby road segments within {radius}m.")
+        print(f"Found {len(nearby_segments)} nearby road segments within {radius}m.\n")
         return nearby_segments.to_crs(epsg=4326)  # Convert back to WGS84
 
 
     def fetch_obstacles(self, search_radius):
         if not self.store_latitude or not self.store_longitude:
             raise ValueError("Store coordinates not set")
+        
+        print("Grabbing all nearby obstructions and store building...")
         
         # Get store building
         tags = {'building': True}
@@ -64,7 +66,7 @@ class TrafficVisibility:
         # Identify and remove store's own building
         store_building_mask = self.obstacles.intersects(store_point)
         self.obstacles = self.obstacles[~store_building_mask].copy()
-        print(f"Filtered {store_building_mask.sum()} store buildings from obstacles")
+        print(f"Filtered {store_building_mask.sum()} store buildings from obstacles.\n")
 
 
     # Check visibility with buffer and intersection
@@ -156,4 +158,4 @@ class TrafficVisibility:
                 ).add_to(store_map)
         
         store_map.save(filename)
-        print(f"Debug map saved to {filename}")
+        print(f"Map saved to {filename}.")
