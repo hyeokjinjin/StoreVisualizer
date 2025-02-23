@@ -31,11 +31,12 @@ def main():
     radius = 200
     pedestrian_radius = 50
 
+    print("--- Address Conversion ---")
     lat, lon = coordinates(address)
 
     state = extract_state(address)
 
-    # Process traffic visibility
+    print("\n--- Processing Traffic Visibility ---")
     tv = TrafficVisibility(lat, lon)
     tv.read_data("traffic_data_sample.csv", state)
     roads = tv.nearby_data(radius=radius)
@@ -53,16 +54,17 @@ def main():
             tv.obstacles
         )
         tv.generate_map(visible, "visible_traffic_map.html")
+        print(visible)
 
         print(f"Found {len(visible)} visible segments.")
-        print("Car traffic value: ", tv.calculate_car_traffic(visible))
+        print("Car traffic value: ", tv.calculate_car_traffic(visible), "\n")
     else:
         print("No nearby roads found")    
 
     # **Sidewalk Visibility Processing**
     print("\n--- Processing Sidewalk Visibility ---")
-    sv = SidewalkVisibility(lat, lon, radius=pedestrian_radius)
-    visibility_score = sv.calculate_visibility_score()
+    sv = SidewalkVisibility(lat, lon)
+    visibility_score = sv.calculate_visibility_score(radius)
 
     print(f"Storefront Visibility Score (Sidewalk): {visibility_score}")
     
