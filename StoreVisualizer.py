@@ -57,7 +57,6 @@ def main():
                 tv.obstacles
             )
             tv.generate_map(visible, "visible_traffic_map.html")
-            print(visible)
 
             print(f"Found {len(visible)} visible segments.")
             print("Car traffic value: ", tv.calculate_car_traffic(visible), "\n")
