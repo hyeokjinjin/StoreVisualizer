@@ -1,6 +1,6 @@
 from geopy.geocoders import Nominatim
 from traffic_visibility import TrafficVisibility
-# from SidewalkVisibility import SidewalkVisibility
+from sidewalk_visibility import SidewalkVisibility
 from shapely.geometry import Point
 
 
@@ -29,10 +29,12 @@ def main():
     # address = "500 Broadway, New York, NY 10012"
     address = "609 8th Ave, New York, NY 10018"
     radius = 200
-    
+    pedestrian_radius = 50
+
     lat, lon = coordinates(address)
+
     state = extract_state(address)
-    
+
     # Process traffic visibility
     tv = TrafficVisibility(lat, lon)
     tv.read_data("traffic_data_sample.csv", state)
@@ -42,7 +44,7 @@ def main():
     tv.fetch_seasonal_visibility()
     
     tv.generate_map(roads, "traffic_map.html")
-    
+
     if roads is not None and not roads.empty:
         print("Truncating for segments with visible storefront...")
         visible = tv.filter_visible_segments(
@@ -51,11 +53,19 @@ def main():
             tv.obstacles
         )
         tv.generate_map(visible, "visible_traffic_map.html")
+
         print(f"Found {len(visible)} visible segments.")
         print("Car traffic value: ", tv.calculate_car_traffic(visible))
     else:
         print("No nearby roads found")    
 
+    # **Sidewalk Visibility Processing**
+    print("\n--- Processing Sidewalk Visibility ---")
+    sv = SidewalkVisibility(lat, lon, radius=pedestrian_radius)
+    visibility_score = sv.calculate_visibility_score()
+
+    print(f"Storefront Visibility Score (Sidewalk): {visibility_score}")
+    
 
 if __name__ == "__main__":
     main()
