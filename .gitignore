@@ -3,6 +3,9 @@ traffic_data_sample.csv
 traffic_data_sample.parquet
 traffic_data_sample/
 cache/
+__pycache__/
 map.html
 visible_map.html
+traffic_map.html
+visible_traffic_map.html
 .DS_Store
