@@ -25,49 +25,57 @@ def extract_state(address):
 
 
 def main():
-    # address = "190 Bowery, New York, NY 10012"
-    # address = "500 Broadway, New York, NY 10012"
-    address = "609 8th Ave, New York, NY 10018"
+    address = input("Enter the store address: ").strip()
+    if not address:
+        print("Error: No address provided.")
+        return
+
     radius = 200
     pedestrian_radius = 50
 
-    print("--- Address Conversion ---")
-    lat, lon = coordinates(address)
+    try:
+        print("--- Address Conversion ---")
+        lat, lon = coordinates(address)
 
-    state = extract_state(address)
+        state = extract_state(address)
 
-    print("\n--- Processing Traffic Visibility ---")
-    tv = TrafficVisibility(lat, lon)
-    tv.read_data("traffic_data_sample.csv", state)
-    roads = tv.nearby_data(radius=radius)
-    tv.fetch_obstacles(search_radius=radius)
-    
-    tv.fetch_seasonal_visibility()
-    
-    tv.generate_map(roads, "traffic_map.html")
+        print("\n--- Processing Traffic Visibility ---")
+        tv = TrafficVisibility(lat, lon)
+        tv.read_data("traffic_data_sample.csv", state)
+        roads = tv.nearby_data(radius=radius)
+        tv.fetch_obstacles(search_radius=radius)
 
-    if roads is not None and not roads.empty:
-        print("Truncating for segments with visible storefront...")
-        visible = tv.filter_visible_segments(
-            roads,
-            Point(tv.store_longitude, tv.store_latitude),
-            tv.obstacles
-        )
-        tv.generate_map(visible, "visible_traffic_map.html")
-        print(visible)
+        tv.fetch_seasonal_visibility()
 
-        print(f"Found {len(visible)} visible segments.")
-        print("Car traffic value: ", tv.calculate_car_traffic(visible), "\n")
-    else:
-        print("No nearby roads found")    
+        tv.generate_map(roads, "traffic_map.html")
 
-    # **Sidewalk Visibility Processing**
-    print("\n--- Processing Sidewalk Visibility ---")
-    sv = SidewalkVisibility(lat, lon)
-    visibility_score = sv.calculate_visibility_score(radius)
+        if roads is not None and not roads.empty:
+            print("Truncating for segments with visible storefront...")
+            visible = tv.filter_visible_segments(
+                roads,
+                Point(tv.store_longitude, tv.store_latitude),
+                tv.obstacles
+            )
+            tv.generate_map(visible, "visible_traffic_map.html")
+            print(visible)
 
-    print(f"Storefront Visibility Score (Sidewalk): {visibility_score}")
-    
+            print(f"Found {len(visible)} visible segments.")
+            print("Car traffic value: ", tv.calculate_car_traffic(visible), "\n")
+        else:
+            print("No nearby roads found")    
+
+        # **Sidewalk Visibility Processing**
+        print("\n--- Processing Sidewalk Visibility ---")
+        sv = SidewalkVisibility(lat, lon)
+        visibility_score = sv.calculate_visibility_score(radius)
+
+        print(f"Storefront Visibility Score (Sidewalk): {visibility_score}")
+
+        print("\nTotal Visibility Score: {:.2f}".format(visibility_score + tv.calculate_car_traffic(visible)))
+
+    except ValueError as e:
+        print(f"Error: {e}")
+
 
 if __name__ == "__main__":
     main()
