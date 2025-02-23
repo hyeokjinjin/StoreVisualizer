@@ -11,6 +11,7 @@ __pycache__/
 
 traffic_map.html
 visible_traffic_map.html
+visible_sidewalk_traffic_map.html
 
 
 config.json

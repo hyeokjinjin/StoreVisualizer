@@ -136,7 +136,6 @@ class TrafficVisibility:
                 style_function=lambda x: {'color': 'orange', 'fillOpacity': 0.3}
             ).add_to(store_map)
             
-        # Add obstacles
         if not self.store_building.empty:
             folium.GeoJson(
                 self.store_building,

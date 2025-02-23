@@ -2,20 +2,21 @@ import requests
 import geopandas as gpd
 from shapely.geometry import Point, LineString
 import osmnx as ox
+import folium
 
 class SidewalkVisibility:
-    def __init__(self, lat, lon, radius=100):
-        self.lat = lat
-        self.lon = lon
-        self.radius = radius
+    def __init__(self, lat, lon):
+        self.store_latitude, self.store_longitude = lat, lon
         self.obstacles = gpd.GeoDataFrame()
+        self.store_building = gpd.GeoDataFrame()
 
-    def fetch_street_segments(self):
+
+    def fetch_street_segments(self, radius):
         """Fetch pedestrian and footway street segments dynamically from OpenStreetMap."""
         overpass_url = "http://overpass-api.de/api/interpreter"
         query = f"""
         [out:json];
-        way["highway"~"footway|pedestrian"](around:{self.radius},{self.lat},{self.lon});
+        way["highway"~"footway|pedestrian"](around:{radius},{self.store_latitude},{self.store_longitude});
         out geom;
         """
 
@@ -35,20 +36,29 @@ class SidewalkVisibility:
         # print("DEBUG: Overpass API request failed.")
         return gpd.GeoDataFrame()
 
-    def fetch_obstacles(self):
-        """Fetch obstacles (buildings) that might block visibility."""
-        tags = {'building': True}
-        store_point = Point(self.lon, self.lat)
         
+    def fetch_obstacles(self, search_radius):
+        if not self.store_latitude or not self.store_longitude:
+            raise ValueError("Store coordinates not set")
+        
+        print("Grabbing all nearby obstructions and store building...")
+        
+        # Get store building
+        tags = {'building': True}
+        store_point = Point(self.store_longitude, self.store_latitude)
+        
+        # Fetch obstacles and explode multipolygons
         self.obstacles = ox.features_from_point(
-            (self.lat, self.lon), tags=tags, dist=self.radius
+            (self.store_latitude, self.store_longitude),
+            tags=tags,
+            dist=search_radius
         ).explode(index_parts=True).reset_index(drop=True)
         
-        # Exclude the building that contains the store
+        # Identify and remove store's own building
         store_building_mask = self.obstacles.intersects(store_point)
+        self.store_building = self.obstacles[self.obstacles.geometry.contains(store_point)]
         self.obstacles = self.obstacles[~store_building_mask].copy()
-
-        # print(f"DEBUG: Found {len(self.obstacles)} obstacle buildings after removing store.")
+        print(f"Filtered {store_building_mask.sum()} store buildings from obstacles.\n")
 
 
 
@@ -133,12 +143,12 @@ class SidewalkVisibility:
         # print("DEBUG: Failed to fetch pedestrian density.")
         return 0
 
-    def calculate_visibility_score(self):
+    def calculate_visibility_score(self, radius):
         """Calculate visibility score by multiplying visible segment length with pedestrian density."""
         # print("\n--- Starting Visibility Calculation ---")
-        self.fetch_obstacles()
-        store_location = Point(self.lon, self.lat)
-        street_segments = self.fetch_street_segments()
+        self.fetch_obstacles(radius)
+        store_location = Point(self.store_longitude, self.store_latitude)
+        street_segments = self.fetch_street_segments(radius)
 
         if street_segments.empty:
             # print("DEBUG: No sidewalk segments found near store.")
@@ -146,20 +156,87 @@ class SidewalkVisibility:
 
         total_visibility_score = 0
         visible_segment_count = 0
+        visible_segments = []
 
         for segment in street_segments.geometry:
             visible_segment = self.is_segment_visible(segment, store_location)
             if visible_segment:  # Now, at least one point being visible counts the segment
+                visible_segments.append(visible_segment)
                 visible_segment_count += 1
                 segment_length = visible_segment.length
-                pedestrian_density = self.fetch_pedestrian_density(self.lat, self.lon)
+                pedestrian_density = self.fetch_pedestrian_density(self.store_latitude, self.store_longitude)
 
                 # print(f"DEBUG: Visible segment length: {segment_length}, Pedestrian density: {pedestrian_density}")
 
                 total_visibility_score += (segment_length * pedestrian_density) / 10 # Normalize by 10 for scaling
+
+        visible_gdf = gpd.GeoDataFrame(geometry=visible_segments, crs="EPSG:3857")
+        visible_gdf = visible_gdf.to_crs(epsg=4326)
+
+        self.generate_map(visible_gdf, "visible_sidewalk_traffic_map.html")
+
 
         # print(f"DEBUG: Total visible segments: {visible_segment_count}")
         # print(f"DEBUG: Final visibility score: {total_visibility_score}")
 
         return round(total_visibility_score, 2)
 
+
+
+    def generate_map(self, visible_sidewalks, filename):
+        if self.store_latitude is None or self.store_longitude is None:
+            raise ValueError("Error: Store coordinates not set.")
+            
+        store_map = folium.Map(location=[self.store_latitude, self.store_longitude], zoom_start=14)
+        
+        # Add store location
+        folium.Marker(
+            [self.store_latitude, self.store_longitude],
+            popup="Store Location",
+            icon=folium.Icon(color="red", icon="home")
+        ).add_to(store_map)
+        
+        if not self.store_building.empty:
+            folium.GeoJson(
+                self.store_building,
+                name="Store Building",
+                style_function=lambda x: {'color': 'red', 'fillOpacity': 0.4}
+            ).add_to(store_map)
+
+        # Add obstacles
+        if not self.obstacles.empty:
+            obstacles_filtered = self.obstacles[self.obstacles.geometry.type.isin(["LineString", "Polygon"])]
+            folium.GeoJson(
+                obstacles_filtered,
+                style_function=lambda x: {'color': 'orange', 'fillOpacity': 0.3}
+            ).add_to(store_map)
+
+        # Add visible sidewalks only
+        if visible_sidewalks is not None and not visible_sidewalks.empty:
+            for i, row in visible_sidewalks.iterrows():
+                if not isinstance(row["geometry"], LineString):
+                    continue  # Skip invalid geometries
+                
+                line_coords = [(lat, lon) for lon, lat in row["geometry"].coords]  # Reverse to folium format
+                
+                folium.PolyLine(
+                    line_coords, 
+                    color="blue",  # Blue for visible sidewalks
+                    weight=5,
+                    popup=f"Visible Sidewalk {i}"
+                ).add_to(store_map)
+                
+                # Add markers at start and end of the road segment
+                folium.Marker(
+                    line_coords[0],  # Start point
+                    icon=folium.Icon(color="green", icon="play"),
+                    popup=f"Start of segment {i}"
+                ).add_to(store_map)
+                
+                folium.Marker(
+                    line_coords[-1],  # End point
+                    icon=folium.Icon(color="blue", icon="stop"),
+                    popup=f"End of segment {i}"
+                ).add_to(store_map)
+
+        store_map.save(filename)
