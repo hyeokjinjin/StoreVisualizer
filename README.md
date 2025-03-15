@@ -1,6 +1,8 @@
 # Storefront Visibility and Impressions Estimator
 
 ## Overview
+Hacklytics 2025 Entry for GrowthFactorAI Challenge
+
 This project estimates the **total impressions** a storefront receives based on its visibility from nearby road segments and associated traffic data. Using provided traffic volume data and spatial analysis techniques, this solution generates a visibility score that can guide commercial realtors in evaluating prime storefront locations.
 
 ## Key Features
